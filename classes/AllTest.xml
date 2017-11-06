@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="RxRSuite"  thread-count="5"
+	verbose="1">
+
+	<test name="RxRAutomationSuite" junit="false" preserve-order="true">
+		<classes>
+			<class name="com.mercurytour.MercuryTourRunner" />
+		</classes>
+	</test>
+</suite>

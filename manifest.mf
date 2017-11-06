@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Created-By: Bundle
+Class-Path: ./mercurytour-0.0.1-SNAPSHOT.jar
+Main-Class: YourMainClass
