@@ -17,8 +17,9 @@ public class MercuryTourUtils {
 	public void initiateBrowser() {
 		String baseDir = System.getProperty("user.dir");
 		String firefoxDriverPath = baseDir + File.separator + "src" + File.separator + "test" + File.separator
-				+ "drivers" + File.separator + "geckodriver.exe";
-		//System.setProperty("webdriver.gecko.driver", firefoxDriverPath);
+				 + "geckodriver.exe";
+		System.out.println("firefoxDriverPath=====> " + firefoxDriverPath);
+		System.setProperty("webdriver.gecko.driver", firefoxDriverPath);
 		driver = new FirefoxDriver();
 		
 		driver.get("http://newtours.demoaut.com/");
