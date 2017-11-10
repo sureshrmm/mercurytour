@@ -4,15 +4,22 @@ import java.io.File;
 
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MercuryTourUtils {
 	
 	public static WebDriver driver;
+	
+	public MercuryTourUtils() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public void initiateBrowser() {
 		String baseDir = System.getProperty("user.dir");
@@ -20,7 +27,13 @@ public class MercuryTourUtils {
 				 + "geckodriver.exe";
 		System.out.println("firefoxDriverPath=====> " + firefoxDriverPath);
 		System.setProperty("webdriver.gecko.driver", firefoxDriverPath);
-		driver = new FirefoxDriver();
+		
+		DesiredCapabilities capa =DesiredCapabilities.firefox();
+	     capa.setBrowserName("firefox");
+	     //capa.setCapability("binary", "/usr/bin/firefox");
+	     capa.setPlatform(Platform.ANY);
+		
+		driver = new FirefoxDriver(capa);
 		
 		driver.get("http://newtours.demoaut.com/");
 	}
